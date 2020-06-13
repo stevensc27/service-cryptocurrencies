@@ -35,14 +35,14 @@ public class CryptocurrencyServiceImplementation implements CryptocurrencyServic
     public Cryptocurrency createCryptocurrency(Cryptocurrency cryptocurrency) {
         try {
             return cryptocurrencyRepository.save(cryptocurrency);
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new CryptocurrencyNameException("Name can't be empty");
         }
     }
 
     @Override
     public Cryptocurrency updateCryptocurrency(Cryptocurrency cryptocurrency) {
-        if (getCryptocurrency(cryptocurrency.getId()) == null){
+        if (getCryptocurrency(cryptocurrency.getId()) == null) {
             return null;
         }
         return cryptocurrencyRepository.save(cryptocurrency);
@@ -52,6 +52,4 @@ public class CryptocurrencyServiceImplementation implements CryptocurrencyServic
     public Cryptocurrency getCryptocurrency(Long id) {
         return cryptocurrencyRepository.findById(id).orElse(null);
     }
-
-
 }
