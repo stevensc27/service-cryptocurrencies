@@ -1,0 +1,20 @@
+server:
+  port: 9081
+  servlet:
+    context-path: /practice1/
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:practice1DB
+    driver-class-name: org.h2.Driver
+    platform: h2
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+
